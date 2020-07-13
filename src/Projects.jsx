@@ -1,6 +1,8 @@
 import React from 'react';
-import { Grid, Typography, Card, Link, CardContent, Button, CardActions, CardMedia } from '@material-ui/core';
 import Project from './Project';
+import { Heading, Grid, Box, Link, Text, Image, SimpleGrid } from '@chakra-ui/core';
+import theme from './theme';
+import SectionHeading from './components/SectionHeading';
 
 const projectList = [
 	{
@@ -47,14 +49,19 @@ const projectList = [
 ];
 
 const Projects = () => (
-	<section id="projects" className="projects-section">
-		<Typography variant="h2">Projects</Typography>
-		<Grid container spacing={10} direction="row">
+	<Box as="section" id="projects" className="projects-section" style={{ backgroundColor: theme.colors.lavender }}>
+		<SectionHeading text="Projects" />
+		<SimpleGrid
+			//minChildWidth="20%"
+			columns={{ lg: 3, md: 2, sm: 1 }}
+			gap={5}
+			//templateColumns="repeat(3, 1fr)"
+		>
 			{projectList.map(({ name, details, link, image }) => (
 				<Project key={name} name={name} details={details} link={link} image={image} />
 			))}
-		</Grid>
-	</section>
+		</SimpleGrid>
+	</Box>
 );
 
 export default Projects;

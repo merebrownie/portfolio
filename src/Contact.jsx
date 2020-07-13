@@ -1,61 +1,104 @@
-import React, { Fragment, useState } from 'react';
-import { Typography, TextField, Button, Icon } from '@material-ui/core';
+import React, { Fragment, useState, createRef } from 'react';
+import {
+	Button,
+	Heading,
+	FormControl,
+	FormLabel,
+	Input,
+	FormHelperText,
+	Select,
+	Textarea,
+	Box,
+	Icon,
+	useDisclosure,
+} from '@chakra-ui/core';
+import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from 'emailjs-com';
+import Modal from './Modal';
+import SectionHeading from './components/SectionHeading';
 
 const Contact = () => {
-	const [name, setName] = useState();
-	const [email, setEmail] = useState();
-	const [message, setMessage] = useState();
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const [loading, setLoading] = useState();
+	const [error, setError] = useState(true);
 
-	const handleNameChange = (event) => {
-		setName(event.target.value);
-	};
+	const recaptchaRef = createRef();
 
-	const handleEmailChange = (event) => {
-		setEmail(event.target.value);
-	};
+	const sendEmail = (e) => {
+		setError(false);
+		setLoading(true);
+		e.preventDefault();
 
-	const handleMessageChange = (event) => {
-		setMessage(event.target.value);
+		return emailjs.sendForm('icloud', 'template_KRhM5nMN', e.target, 'user_KQXR5OSjppGBpBtgTf4Mb').then(
+			(result) => {
+				setLoading(false);
+			},
+			(error) => {
+				setError(true);
+				setLoading(false);
+			}
+		);
 	};
 
 	return (
-		<section>
-			<Typography variant="h2">Contact</Typography>
-			<form action="contact_manager/index.php" method="post">
-				<input type="hidden" name="action" value="add_contact" />
-				<TextField
-					id="name"
-					label="Name"
-					id="contact_name"
-					variant="outlined"
-					value={name}
-					onChange={handleNameChange}
-				/>
-				<br />
-				<TextField
-					id="email"
-					label="Email"
-					id="contact_email"
-					variant="outlined"
-					value={email}
-					onChange={handleEmailChange}
-				/>
-				<br />
-				<TextField
-					id="message"
-					multiline
-					label="Message"
-					id="contact_message"
-					variant="outlined"
-					value={message}
-					onChange={handleMessageChange}
-				/>
-				<br />
-				<Button variant="outlined" color="primary" endIcon={<Icon>send</Icon>}>
-					Send
-				</Button>
-			</form>
-		</section>
+		<Box as="section" id="contact" backgroundColor="grey.100">
+			<SectionHeading text="Contact" />
+			<Box objectFit="contain" ml="auto" mr="auto" mb="5%" width="100%" textAlign="center" letterSpacing="3">
+				<form onSubmit={(e) => sendEmail(e)}>
+					<FormControl ml="auto" mr="auto" mb="3%">
+						<Input
+							type="name"
+							id="name"
+							name="name"
+							isRequired
+							aria-describedby="name-helper-text"
+							placeholder="Name"
+							width="70%"
+							ml="auto"
+							mr="auto"
+						/>
+					</FormControl>
+					<FormControl ml="auto" mr="auto" mb="3%">
+						<Input
+							type="email"
+							id="email"
+							name="email"
+							isRequired
+							aria-describedby="email-helper-text"
+							placeholder="Email"
+							width="70%"
+							ml="auto"
+							mr="auto"
+						/>
+					</FormControl>
+					<FormControl ml="auto" mr="auto" mb="3%">
+						<Textarea
+							id="message"
+							name="message"
+							placeholder="Message"
+							isRequired
+							ml="auto"
+							mr="auto"
+							width="70%"
+						/>
+					</FormControl>
+					<Box ml="auto" mr="auto" width="304px" mb="3">
+						<ReCAPTCHA
+							style={{ width: '304px' }}
+							ml="auto"
+							mr="auto"
+							ref={recaptchaRef}
+							sitekey="6LcS_7AZAAAAAI-RxystXhg2DbLsZ47Ze58vc8on"
+						/>
+					</Box>
+					<Button type="submit" variant="outline" onClick={onOpen}>
+						Send
+					</Button>
+				</form>
+			</Box>
+
+			<Modal isOpen={isOpen} onOpen={onOpen} onClose={onClose} error={error} loading={loading} />
+		</Box>
 	);
 };
 

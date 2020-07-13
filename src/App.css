@@ -1,9 +1,14 @@
-/* body {
+body {
 	text-align: center;
-	background-image: image('./grey-floral.png');
+	background-image: url('/public/grey-floral.png');
 }
 
-.App-logo {
+section {
+	margin-top: 5em;
+	margin-bottom: 5em;
+}
+
+/* .App-logo {
 	height: 40vmin;
 	pointer-events: none;
 }

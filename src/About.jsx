@@ -1,48 +1,50 @@
 import React from 'react';
 import md5 from 'md5';
-import { Typography, Link, List, ListItem } from '@material-ui/core';
-import { GitHub, LinkedIn } from '@material-ui/icons';
+import { Heading, List, ListItem, Image, Text, Link, Box } from '@chakra-ui/core';
+import Subheader from './components/Subheader';
+import SectionHeading from './components/SectionHeading';
 
 const About = () => {
 	const emailHash = md5('merebrownie@me.com');
 	return (
-		<section>
-			<Typography variant="h2">About</Typography>
-			<img
+		<Box as="section" id="about" backgroundColor="grey.100">
+			<SectionHeading text="About" />
+			<Image
+				rounded="full"
+				size="25%"
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
-				id="mere-pic"
-				className="img-circle"
-				height="50%"
-				width="50%"
+				alt="Meredith Fronk"
 			/>
 			<List className="social center-block">
 				<ListItem className="linkedin">
-					<Link href="https://www.linkedin.com/in/meredithlbrowne">
-						<LinkedIn fontSize="large" />
+					<Link href="https://www.linkedin.com/in/meredithlbrowne" isExternal>
+						{/* <LinkedIn fontSize="large" /> */}
 					</Link>
 				</ListItem>
 				<ListItem className="github">
-					<Link href="https://github.com/merebrownie">
-						<GitHub fontSize="large" />
+					<Link href="https://github.com/merebrownie" isExternal>
+						{/* <GitHub fontSize="large" /> */}
 					</Link>
 				</ListItem>
 			</List>
-			<Typography variant="h3">Education</Typography>
-			<Typography variant="h4">University of North Carolina - Charlotte</Typography>
-			<Typography variant="body1">Bachelor of Arts in Computer Science</Typography>
-			<Typography variant="body1">Concentration on Web & Mobile Application Development</Typography>
+			<Heading as="h3" size="lg" fontSize="4xl">
+				Education
+			</Heading>
+			<Subheader as="h4" size="md" fontSize="3xl" text="University of North Carolina - Charlotte" />
+			<Text>Bachelor of Arts in Computer Science</Text>
+			<Text>Concentration on Web & Mobile Application Development</Text>
 
-			<Typography variant="h4">Appalachian State University</Typography>
-			<Typography variant="body1">Bachelor of Science in Communication Disorders</Typography>
-			<Typography variant="h3">Skills</Typography>
-			<List>
-				<ListItem>Node.js</ListItem>
-				<ListItem>React</ListItem>
-				<ListItem>MySQL & Microsoft SQL Server</ListItem>
-				<ListItem>HTML</ListItem>
-				<ListItem>CSS</ListItem>
-			</List>
-		</section>
+			<Subheader as="h4" size="md" fontSize="3xl" text="Appalachian State University" />
+			<Text>Bachelor of Science in Communication Disorders</Text>
+			<Heading as="h3" size="lg" fontSize="4xl">
+				Skills
+			</Heading>
+			<Text>Node.js</Text>
+			<Text>React</Text>
+			<Text>MySQL & Microsoft SQL Server</Text>
+			<Text>HTML</Text>
+			<Text>CSS</Text>
+		</Box>
 	);
 };
 

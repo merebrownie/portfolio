@@ -1,24 +1,27 @@
 import React from 'react';
-import { Card, Typography, Grid, Link, CardContent, CardActions, Button, CardMedia } from '@material-ui/core';
+import { Box, Badge, Image, Link, Text } from '@chakra-ui/core';
+import Button from './components/Button';
 
 const Project = ({ name, details, link, image }) => {
-	console.log(process.env.PUBLIC_URL + image);
 	return (
-		<Grid item>
-			<Card>
-				<CardContent>
-					<Link href={link} target="_blank">
-						<Typography variant="h4">{name}</Typography>
-					</Link>
-					<img src={image} />
-					<CardMedia src={process.env.PUBLIC_URL + image} />
-					{/* <Typography variant="h4">Description</Typography> */}
-					<CardActions>
-						<Button>View</Button>
-					</CardActions>
-				</CardContent>
-			</Card>
-		</Grid>
+		<Box>
+			<Box flexShrink="0">
+				<Image rounded="lg" src={image} alt={`${name} screenshot`} />
+			</Box>
+			<Box ml="0" mt={{ base: 4, md: 0 }} mb={5}>
+				<Text fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wide" color="teal.600">
+					{name}
+				</Text>
+				{details.map((detail) => (
+					<Box key={detail} color="gray.500" letterSpacing="wide" fontSize="xs" mb="0" mt="0">
+						<Text>{detail}</Text>
+					</Box>
+				))}
+			</Box>
+			<Box>
+				<Button href={link} text="View" />
+			</Box>
+		</Box>
 	);
 };
 
