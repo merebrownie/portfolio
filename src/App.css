@@ -1,3 +1,18 @@
+@font-face {
+	font-family: Gardenia;
+	src: url('/fonts/Gardenia.ttf');
+}
+
+@font-face {
+	font-family: Bromello;
+	src: url('/fonts/Bromello.ttf');
+}
+
+@font-face {
+	font-family: Cabana;
+	src: url('/fonts/Cabana-Regular.otf');
+}
+
 body {
 	margin: 0;
 	text-align: center;
