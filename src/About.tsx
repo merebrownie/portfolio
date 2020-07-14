@@ -18,7 +18,7 @@ const About: FC = (): ReactElement => {
 				alt="Meredith Fronk"
 			/>
 			<Box>
-				<Link href="https://www.linkedin.com/in/meredithlbrowne" isExternal color="grey.150">
+				<Link href="https://www.linkedin.com/in/meredithbfronk" isExternal color="grey.150">
 					<IconButton
 						variant="ghost"
 						variantColor="grey.150"
