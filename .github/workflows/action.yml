@@ -33,6 +33,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.DEPLOY_KEY }}
+        passphase: ${{secrets.DEPLOY_KEY_PASSWORD}} 
         source: "build/*"
         target: "/var/www/portfolio"
 
