@@ -1,16 +1,16 @@
 @font-face {
-	font-family: Gardenia;
-	src: url('/fonts/Gardenia.ttf');
+	font-family: 'Gardenia';
+	src: local('Gardenia'), url(./fonts/Gardenia.ttf) format('truetype');
 }
 
 @font-face {
-	font-family: Bromello;
-	src: url('/fonts/Bromello.ttf');
+	font-family: 'Bromello';
+	src: local('Bromello'), url(./fonts/Bromello.ttf) format('truetype');
 }
 
 @font-face {
-	font-family: Cabana;
-	src: url('/fonts/Cabana-Regular.otf');
+	font-family: 'Cabana';
+	src: local('Cabana'), url(./fonts/Cabana-Regular.otf) format('opentype');
 }
 
 body {
