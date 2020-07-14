@@ -13,7 +13,7 @@ const Project = ({ name, details, link, image }) => {
 					{name}
 				</Text>
 				{details.map((detail) => (
-					<Box key={detail} color="gray.500" letterSpacing="wide" fontSize="xs" mb="0" mt="0">
+					<Box key={detail} color="gray.50" letterSpacing="wide" fontSize="xs" mb="0" mt="0">
 						<Text>{detail}</Text>
 					</Box>
 				))}

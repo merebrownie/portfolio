@@ -30,6 +30,7 @@ export default {
 		'6xl': '4rem',
 	},
 	colors: {
+		...theme.colors,
 		black: '#333',
 		grey: {
 			'50': '#f8f8f8',

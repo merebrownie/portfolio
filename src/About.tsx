@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import md5 from 'md5';
-import { Heading, List, ListItem, Image, Text, Link, Box } from '@chakra-ui/core';
+import { Heading, Image, Text, Link, Box, IconButton } from '@chakra-ui/core';
+import { FiLinkedin, FiGithub } from 'react-icons/fi';
+
 import Subheader from './components/Subheader';
 import SectionHeading from './components/SectionHeading';
 
-const About = () => {
+const About: FC = (): ReactElement => {
 	const emailHash = md5('merebrownie@me.com');
 	return (
 		<Box as="section" id="about" backgroundColor="grey.100">
@@ -15,18 +17,30 @@ const About = () => {
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
 				alt="Meredith Fronk"
 			/>
-			<List className="social center-block">
-				<ListItem className="linkedin">
-					<Link href="https://www.linkedin.com/in/meredithlbrowne" isExternal>
-						{/* <LinkedIn fontSize="large" /> */}
-					</Link>
-				</ListItem>
-				<ListItem className="github">
-					<Link href="https://github.com/merebrownie" isExternal>
-						{/* <GitHub fontSize="large" /> */}
-					</Link>
-				</ListItem>
-			</List>
+			<Box>
+				<Link href="https://www.linkedin.com/in/meredithlbrowne" isExternal color="grey.150">
+					<IconButton
+						variant="ghost"
+						variantColor="grey.150"
+						aria-label="LinkedIn"
+						size="lg"
+						icon={FiLinkedin}
+						mt="3"
+						m="2"
+					/>
+				</Link>
+				<Link href="https://github.com/merebrownie" isExternal color="grey.150">
+					<IconButton
+						variant="ghost"
+						variantColor="grey.150"
+						aria-label="GitHub"
+						size="lg"
+						icon={FiGithub}
+						mt="3"
+						m="1"
+					/>
+				</Link>
+			</Box>
 			<Heading as="h3" size="lg" fontSize="4xl">
 				Education
 			</Heading>

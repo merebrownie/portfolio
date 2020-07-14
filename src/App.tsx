@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import './App.css';
 import NavBar from './NavBar';
 import Intro from './Intro';
@@ -8,11 +8,11 @@ import Contact from './Contact';
 import theme from './theme';
 import { ThemeProvider, Grid } from '@chakra-ui/core';
 
-const App = () => {
+const App: FC = (): ReactElement => {
 	return (
 		<ThemeProvider theme={theme}>
 			<NavBar />
-			<Grid backgroundColor="lavender" color="black">
+			<Grid backgroundColor="lavender" m="1%" color="black">
 				<Intro />
 				<About />
 				<Projects />
