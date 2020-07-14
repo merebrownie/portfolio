@@ -9,13 +9,13 @@ const projectList = [
 		name: 'Master of My Music',
 		details: ['Created for ITIS3105', 'PHP Web Application', 'MySQL Database', 'Admin Functionality'],
 		link: 'https://momm.meredith-browne.com',
-		image: '/public/momm-min.jpeg',
+		image: '/momm-min.jpeg',
 	},
 	{
 		name: 'Stone Center',
 		details: ['Created for ITIS2300', 'Intro to Web Application Development', 'HTML, CSS, & JavaScript'],
-		link: 'projects/stonecenter/',
-		image: '/public/stone-center.jpg',
+		link: 'https://sc.meredith-browne.com',
+		image: '/stone-center.jpg',
 	},
 	{
 		name: 'SpotFinder',
@@ -26,14 +26,14 @@ const projectList = [
 			'HTML, CSS, & JavaScript',
 			'Google Maps API',
 		],
-		link: 'projects/spotfinder/',
-		image: '/public/spot-finder.jpg',
+		link: 'https://spotfinder.meredith-browne.com',
+		image: '/spot-finder.jpg',
 	},
 	{
 		name: 'Fraction Concentration',
 		details: ['Created for ITIS3150', 'Rapid Prototyping', 'High Fidelity Axure Prototype'],
-		link: 'projects/axure_prototype/',
-		image: '/public/fraction-concentration.jpeg',
+		link: 'https://fc.meredith-browne.com',
+		image: '/fraction-concentration.jpeg',
 	},
 	{
 		name: 'World Cities',
@@ -43,8 +43,8 @@ const projectList = [
 			'Integrates Google Maps API',
 			'Bootstrap Framework',
 		],
-		link: 'projects/worldcities/',
-		image: '/public/world-cities.jpg',
+		link: 'https://wc.meredith-browne.com',
+		image: '/world-cities.jpg',
 	},
 ];
 
