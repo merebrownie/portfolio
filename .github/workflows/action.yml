@@ -31,9 +31,9 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        port: ${{ secrets.PORT }}
         key: ${{ secrets.DEPLOY_PRIV_KEY }}
         passphrase: ${{secrets.DEPLOY_KEY_PASSWORD}} 
         source: "build/*"
         target: "/var/www/portfolio"
+        rm: true
 
