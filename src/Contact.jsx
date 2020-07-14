@@ -1,17 +1,5 @@
-import React, { Fragment, useState, createRef } from 'react';
-import {
-	Button,
-	Heading,
-	FormControl,
-	FormLabel,
-	Input,
-	FormHelperText,
-	Select,
-	Textarea,
-	Box,
-	Icon,
-	useDisclosure,
-} from '@chakra-ui/core';
+import React, { useState, createRef } from 'react';
+import { Button, FormControl, Input, Textarea, Box, useDisclosure } from '@chakra-ui/core';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from 'emailjs-com';
 import Modal from './Modal';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Badge, Image, Link, Text } from '@chakra-ui/core';
+import { Box, Image, Text } from '@chakra-ui/core';
 import Button from './components/Button';
 
 const Project = ({ name, details, link, image }) => {

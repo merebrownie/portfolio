@@ -1,7 +1,4 @@
 import React from 'react';
-import { backgroundImage } from 'styled-system';
-
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './NavBar';
 import Intro from './Intro';

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { MenuItem, Text, Link } from '@chakra-ui/core';
+import { Text, Link } from '@chakra-ui/core';
 
 interface IProps {
 	href: string;

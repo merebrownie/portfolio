@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Link, Box } from '@chakra-ui/core';
+import { Heading, Box } from '@chakra-ui/core';
 import Button from './components/Button';
 import Subheader from './components/Subheader';
 

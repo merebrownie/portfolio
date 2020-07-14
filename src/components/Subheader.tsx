@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, ElementType } from 'react';
-import { Link, Heading, HeadingProps, BoxProps } from '@chakra-ui/core';
+import { Heading, HeadingProps, BoxProps } from '@chakra-ui/core';
 
 interface IProps {
 	as?: ElementType;

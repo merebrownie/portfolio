@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from './Project';
-import { Heading, Grid, Box, Link, Text, Image, SimpleGrid } from '@chakra-ui/core';
+import { Box, SimpleGrid } from '@chakra-ui/core';
 import theme from './theme';
 import SectionHeading from './components/SectionHeading';
 
@@ -51,12 +51,7 @@ const projectList = [
 const Projects = () => (
 	<Box as="section" id="projects" className="projects-section" style={{ backgroundColor: theme.colors.lavender }}>
 		<SectionHeading text="Projects" />
-		<SimpleGrid
-			//minChildWidth="20%"
-			columns={{ lg: 3, md: 2, sm: 1 }}
-			gap={5}
-			//templateColumns="repeat(3, 1fr)"
-		>
+		<SimpleGrid columns={{ lg: 3, md: 2, sm: 1 }} gap={5}>
 			{projectList.map(({ name, details, link, image }) => (
 				<Project key={name} name={name} details={details} link={link} image={image} />
 			))}

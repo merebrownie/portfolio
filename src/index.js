@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 import './index.css';
 import App from './App';
@@ -8,9 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 	<React.StrictMode>
-		{/* <ReCAPTCHA siteKey="6LdLwrAZAAAAAG5PK4gMCn1uVbqcUbcQXJwEgC3e"> */}
 		<App />
-		{/* </ReCAPTCHA> */}
 	</React.StrictMode>,
 	document.getElementById('root')
 );
