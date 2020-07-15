@@ -5,13 +5,24 @@ interface IProps {
 	as?: ElementType;
 	text: string;
 	size?: HeadingProps['size'];
+	fontFamily?: BoxProps['fontFamily'];
 	fontSize?: BoxProps['fontSize'];
+	fontWeight?: BoxProps['fontWeight'];
+	letterSpacing?: BoxProps['letterSpacing'];
 }
 
 const Subheader: FC<IProps> = (props: IProps): ReactElement => {
-	const { as, text, size, fontSize } = props;
+	const { as, text, size, fontFamily, fontSize, fontWeight, letterSpacing } = props;
 	return (
-		<Heading fontFamily="mono" as={as} size={size} fontSize={fontSize}>
+		<Heading
+			textTransform="uppercase"
+			fontWeight={fontWeight || 'bold'}
+			fontFamily={fontFamily || 'body'}
+			as={as}
+			size={size || '2xl'}
+			fontSize={fontSize || '4xl'}
+			letterSpacing={letterSpacing || 'normal'}
+		>
 			{text}
 		</Heading>
 	);

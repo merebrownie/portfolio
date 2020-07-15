@@ -9,11 +9,11 @@ const Project = ({ name, details, link, image }) => {
 				<Image rounded="lg" src={image} alt={`${name} screenshot`} />
 			</Box>
 			<Box ml="0" mt={{ base: 4, md: 0 }} mb={5}>
-				<Text fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wide" color="teal.600">
+				<Text fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wide">
 					{name}
 				</Text>
 				{details.map((detail) => (
-					<Box key={detail} color="gray.50" letterSpacing="wide" fontSize="xs" mb="0" mt="0">
+					<Box key={detail} letterSpacing="wide" fontSize="xs" mb="0" mt="0">
 						<Text>{detail}</Text>
 					</Box>
 				))}

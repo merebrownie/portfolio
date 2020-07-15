@@ -29,7 +29,7 @@ const NavBar = () => {
 			</Box>
 
 			<Box
-				display={{ sm: show ? 'block' : 'none', md: 'flex' }}
+				display={{ xs: show ? 'block' : 'none', sm: show ? 'block' : 'none', md: 'flex' }}
 				width={{ sm: 'full', md: 'auto' }}
 				alignItems="center"
 				flexGrow={1}

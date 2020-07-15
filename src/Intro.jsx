@@ -8,7 +8,14 @@ const Intro = () => (
 		<Heading as="h1" size={{ lg: '2xl', md: 'xl', sm: 'lg' }} fontSize="6xl">
 			Meredith Browne Fronk
 		</Heading>
-		<Subheader text="Web Development Portfolio" as="h2" size={{ lg: 'xl', md: 'lg', sm: 'md' }} fontSize="5xl" />
+		<Subheader
+			text="Web Development Portfolio"
+			as="h2"
+			size={{ lg: 'xl', md: 'lg', sm: 'md' }}
+			fontSize="5xl"
+			fontWeight="normal"
+			fontFamily="mono"
+		/>
 		<Button href="#about" text="Learn More" />
 	</Box>
 );

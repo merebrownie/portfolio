@@ -13,7 +13,7 @@ const About: FC = (): ReactElement => {
 			<SectionHeading text="About" />
 			<Image
 				rounded="full"
-				size="25%"
+				size={{ lg: '25%', md: '40%', sm: '40%' }}
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
 				alt="Meredith Fronk"
 			/>
@@ -44,11 +44,11 @@ const About: FC = (): ReactElement => {
 			<Heading as="h3" size="lg" fontSize="4xl">
 				Education
 			</Heading>
-			<Subheader as="h4" size="md" fontSize="3xl" text="University of North Carolina - Charlotte" />
+			<Subheader as="h4" size="md" fontSize="lg" text="University of North Carolina - Charlotte" />
 			<Text>Bachelor of Arts in Computer Science</Text>
 			<Text>Concentration on Web & Mobile Application Development</Text>
 
-			<Subheader as="h4" size="md" fontSize="3xl" text="Appalachian State University" />
+			<Subheader as="h4" size="md" fontSize="lg" text="Appalachian State University" />
 			<Text>Bachelor of Science in Communication Disorders</Text>
 			<Heading as="h3" size="lg" fontSize="4xl">
 				Skills
