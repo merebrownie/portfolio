@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { Text, Link } from '@chakra-ui/core';
+import { Text, Link, Heading } from '@chakra-ui/core';
 
 interface IProps {
 	href: string;
@@ -11,9 +11,9 @@ const NavBarItem: FC<IProps> = (props: IProps): ReactElement => {
 
 	return (
 		<Link href={href} color="grey.150">
-			<Text display="block" fontSize="3xl" fontFamily="mono" mt="0" mb="0" mr={6}>
+			<Heading as="h2" fontSize="3xl" fontFamily="mono" mt="0" mb="0" mr={6}>
 				{text}
-			</Text>
+			</Heading>
 		</Link>
 	);
 };
