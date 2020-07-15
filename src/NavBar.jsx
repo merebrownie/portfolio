@@ -14,9 +14,6 @@ import NavBarItem from './components/NavBarItem';
 
 const NavBar = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	const btnRef = React.useRef();
-	const [show, setShow] = React.useState(false);
-	const handleToggle = () => setShow(!show);
 
 	return (
 		<Flex
@@ -40,14 +37,14 @@ const NavBar = () => {
 				</svg>
 			</Box>
 			<Drawer
-				display={{ xs: show ? 'block' : 'none', sm: show ? 'block' : 'none', md: 'none' }}
+				display={{ xs: isOpen ? 'block' : 'none', sm: isOpen ? 'block' : 'none', md: 'none' }}
 				onClose={onClose}
 				isOpen={isOpen}
 				placement="left"
 			>
 				<DrawerOverlay />
 				<DrawerContent backgroundColor="grey.100">
-					{/* <DrawerHeader>{`drawer contents`}</DrawerHeader> */}
+					<DrawerHeader>NAVIGATION</DrawerHeader>
 					<DrawerBody>
 						<NavBarItem href="#home" text="Home" />
 						<NavBarItem href="#about" text="About" />
@@ -57,7 +54,7 @@ const NavBar = () => {
 				</DrawerContent>
 			</Drawer>
 			<Box
-				display={{ xs: show ? 'block' : 'none', sm: show ? 'block' : 'none', md: 'flex' }}
+				display={{ xs: isOpen ? 'block' : 'none', sm: isOpen ? 'block' : 'none', md: 'flex' }}
 				width={{ xs: 'full', sm: 'full', md: 'auto' }}
 				alignItems="center"
 				flexGrow={1}
