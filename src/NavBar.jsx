@@ -30,7 +30,7 @@ const NavBar = () => {
 
 			<Box
 				display={{ xs: show ? 'block' : 'none', sm: show ? 'block' : 'none', md: 'flex' }}
-				width={{ sm: 'full', md: 'auto' }}
+				width={{ xs: 'full', sm: 'full', md: 'auto' }}
 				alignItems="center"
 				flexGrow={1}
 				ml="5"

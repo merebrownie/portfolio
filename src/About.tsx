@@ -13,7 +13,7 @@ const About: FC = (): ReactElement => {
 			<SectionHeading text="About" />
 			<Image
 				rounded="full"
-				size={{ lg: '25%', md: '40%', sm: '40%' }}
+				size={{ lg: '25%', md: '40%', sm: '40%', xs: '50%' }}
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
 				alt="Meredith Fronk"
 			/>
@@ -22,6 +22,7 @@ const About: FC = (): ReactElement => {
 					<IconButton
 						variant="ghost"
 						variantColor="grey.150"
+						backgroundColor="lavender"
 						aria-label="LinkedIn"
 						size="lg"
 						icon={FiLinkedin}
