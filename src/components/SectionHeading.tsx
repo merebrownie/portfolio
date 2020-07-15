@@ -8,7 +8,7 @@ interface IProps {
 const SectionHeading: FC<IProps> = (props: IProps): ReactElement => {
 	const { text } = props;
 	return (
-		<Heading as="h2" size="xl" fontSize="5xl">
+		<Heading as="h2" size="xl" fontSize="5xl" mb="8">
 			{text}
 		</Heading>
 	);

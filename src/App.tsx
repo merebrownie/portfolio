@@ -6,11 +6,12 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import theme from './theme';
-import { ThemeProvider, Grid } from '@chakra-ui/core';
+import { CSSReset, ThemeProvider, Grid } from '@chakra-ui/core';
 
 const App: FC = (): ReactElement => {
 	return (
 		<ThemeProvider theme={theme}>
+			<CSSReset />
 			<NavBar />
 			<Grid backgroundColor="lavender" m="1%" color="black">
 				<Intro />

@@ -5,44 +5,45 @@ import { FiLinkedin, FiGithub } from 'react-icons/fi';
 
 import Subheader from './components/Subheader';
 import SectionHeading from './components/SectionHeading';
+import Section from './components/Section';
 
 const About: FC = (): ReactElement => {
 	const emailHash = md5('merebrownie@me.com');
 	return (
-		<Box as="section" id="about" backgroundColor="grey.100">
+		<Section id="about">
 			<SectionHeading text="About" />
 			<Image
 				rounded="full"
 				size={{ lg: '25%', md: '40%', sm: '40%', xs: '50%' }}
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
 				alt="Meredith Fronk"
+				ml="auto"
+				mr="auto"
 			/>
-			<Box>
+			<Box mt="3" mb="3">
 				<Link href="https://www.linkedin.com/in/meredithbfronk" isExternal color="grey.150">
 					<IconButton
-						variant="ghost"
+						variant="outline"
 						variantColor="grey.150"
-						backgroundColor="lavender"
 						aria-label="LinkedIn"
 						size="lg"
 						icon={FiLinkedin}
-						mt="3"
-						m="2"
+						_hover={{ backgroundColor: 'grey.150', color: 'grey.50' }}
 					/>
 				</Link>
 				<Link href="https://github.com/merebrownie" isExternal color="grey.150">
 					<IconButton
-						variant="ghost"
+						variant="outline"
 						variantColor="grey.150"
 						aria-label="GitHub"
 						size="lg"
 						icon={FiGithub}
-						mt="3"
-						m="1"
+						ml="1"
+						_hover={{ backgroundColor: 'grey.150', color: 'grey.50' }}
 					/>
 				</Link>
 			</Box>
-			<Heading as="h3" size="lg" fontSize="4xl">
+			<Heading as="h3" size="lg" fontSize="4xl" mt="5" mb="3">
 				Education
 			</Heading>
 			<Subheader as="h4" size="md" fontSize="lg" text="University of North Carolina - Charlotte" />
@@ -51,15 +52,16 @@ const About: FC = (): ReactElement => {
 
 			<Subheader as="h4" size="md" fontSize="lg" text="Appalachian State University" />
 			<Text>Bachelor of Science in Communication Disorders</Text>
-			<Heading as="h3" size="lg" fontSize="4xl">
+			<Heading as="h3" size="lg" fontSize="4xl" mt="5" mb="3">
 				Skills
 			</Heading>
 			<Text>Node.js</Text>
 			<Text>React</Text>
+			<Text>GraphQL</Text>
 			<Text>MySQL & Microsoft SQL Server</Text>
 			<Text>HTML</Text>
 			<Text>CSS</Text>
-		</Box>
+		</Section>
 	);
 };
 

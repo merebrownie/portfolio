@@ -1,11 +1,12 @@
 import React from 'react';
-import { Heading, Box } from '@chakra-ui/core';
+import { Heading } from '@chakra-ui/core';
 import Button from './components/Button';
 import Subheader from './components/Subheader';
+import Section from './components/Section';
 
 const Intro = () => (
-	<Box as="section" id="home" backgroundColor="lavender">
-		<Heading as="h1" size={{ lg: '2xl', md: 'xl', sm: 'lg' }} fontSize="6xl">
+	<Section id="home" backgroundColor="lavender" height="90vh">
+		<Heading as="h1" size={{ lg: '2xl', md: 'xl', sm: 'lg' }} fontSize="6xl" mt="20%">
 			Meredith Browne Fronk
 		</Heading>
 		<Subheader
@@ -17,7 +18,7 @@ const Intro = () => (
 			fontFamily="mono"
 		/>
 		<Button href="#about" text="Learn More" />
-	</Box>
+	</Section>
 );
 
 export default Intro;

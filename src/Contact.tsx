@@ -5,6 +5,7 @@ import emailjs from 'emailjs-com';
 import Modal from './Modal';
 import SectionHeading from './components/SectionHeading';
 import Button from './components/Button';
+import Section from './components/Section';
 
 const Contact: FC = (): ReactElement => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,7 +31,7 @@ const Contact: FC = (): ReactElement => {
 	};
 
 	return (
-		<Box as="section" id="contact" backgroundColor="grey.100">
+		<Section id="contact" height="100vh">
 			<SectionHeading text="Contact" />
 			<Box objectFit="contain" ml="auto" mr="auto" mb="5%" width="100%" textAlign="center" letterSpacing="3">
 				<form onSubmit={(e) => sendEmail(e)}>
@@ -79,7 +80,7 @@ const Contact: FC = (): ReactElement => {
 			</Box>
 
 			<Modal isOpen={isOpen} onOpen={onOpen} onClose={onClose} error={error} loading={loading} />
-		</Box>
+		</Section>
 	);
 };
 

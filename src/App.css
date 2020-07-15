@@ -19,10 +19,11 @@ body {
 	background-image: url('/grey-floral.png');
 }
 
-section {
-	margin-top: 5em;
-	margin-bottom: 5em;
-}
+/* section {
+	min-height: 100vh;
+	padding-top: 15em;
+	padding-bottom: 5em;
+} */
 
 /* .App-logo {
 	height: 40vmin;
