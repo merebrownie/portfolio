@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-	Box,
-	Heading,
-	Flex,
-	Drawer,
-	useDisclosure,
-	DrawerOverlay,
-	DrawerContent,
-	DrawerHeader,
-	DrawerBody,
-} from '@chakra-ui/core';
+import { Box, Heading, Flex, useDisclosure } from '@chakra-ui/core';
 import NavBarItem from './components/NavBarItem';
+import Drawer from './Drawer';
 
 const NavBar = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,6 +15,11 @@ const NavBar = () => {
 			padding="1.5rem"
 			bg="grey.50"
 			color="grey.150"
+			position="fixed"
+			width="full"
+			m="0"
+			top="0"
+			zIndex="99"
 		>
 			<Flex align="center" mr={5}>
 				<Heading as="h1" size="xl" mt="0" mb="0" letterSpacing={'-.1rem'}>
@@ -36,25 +32,9 @@ const NavBar = () => {
 					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
 				</svg>
 			</Box>
-			<Drawer
-				display={{ xs: isOpen ? 'block' : 'none', sm: isOpen ? 'block' : 'none', md: 'none' }}
-				onClose={onClose}
-				isOpen={isOpen}
-				placement="left"
-			>
-				<DrawerOverlay />
-				<DrawerContent backgroundColor="grey.100">
-					<DrawerHeader>NAVIGATION</DrawerHeader>
-					<DrawerBody>
-						<NavBarItem href="#home" text="Home" />
-						<NavBarItem href="#about" text="About" />
-						<NavBarItem href="#projects" text="Projects" />
-						<NavBarItem href="#contact" text="Contact" />
-					</DrawerBody>
-				</DrawerContent>
-			</Drawer>
+			<Drawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
 			<Box
-				display={{ xs: isOpen ? 'block' : 'none', sm: isOpen ? 'block' : 'none', md: 'flex' }}
+				display={{ xs: 'none', sm: 'none', md: 'flex' }}
 				width={{ xs: 'full', sm: 'full', md: 'auto' }}
 				alignItems="center"
 				flexGrow={1}
