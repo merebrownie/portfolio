@@ -1,4 +1,6 @@
 import React, { FC, ReactElement, useState } from 'react';
+import ReactGA from 'react-ga';
+
 import NavBar from './NavBar';
 import Intro from './Intro';
 import About from './About';
@@ -10,6 +12,9 @@ import Footer from './Footer';
 import { ColorModeContext } from './colorModeContext';
 
 const App: FC = (): ReactElement => {
+	ReactGA.initialize('UA-89191904-1');
+	ReactGA.pageview(window.location.pathname + window.location.search);
+
 	const localColorMode = localStorage.getItem('colorMode') === 'dark' ? 'dark' : 'light';
 	const [colorMode, setColorMode] = useState<'light' | 'dark'>(localColorMode);
 
