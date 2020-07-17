@@ -27,7 +27,7 @@ const Modal = (props: {
 			<ModalOverlay />
 
 			{loading ? (
-				<ModalContent textAlign="center" pb="5" borderRadius="1%">
+				<ModalContent display="flex" justifyContent="center" textAlign="center" pb="5" borderRadius="1%">
 					<ModalHeader pb="0">
 						<Heading>Loading...</Heading>
 					</ModalHeader>
