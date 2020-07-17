@@ -15,11 +15,9 @@ const About: FC = (): ReactElement => {
 			<SectionHeading text="About" />
 			<Image
 				rounded="full"
-				size={{ lg: '25%', md: '40%', sm: '40%', xs: '50%' }}
+				size={{ xl: '15%', lg: '25%', md: '40%', sm: '40%', xs: '50%' }}
 				src={`https://www.gravatar.com/avatar/${emailHash}?s=800`}
 				alt="Meredith Fronk"
-				ml="auto"
-				mr="auto"
 			/>
 			<Box mt="3" mb="3">
 				<Link href="https://www.linkedin.com/in/meredithbfronk" isExternal color="grey.300">

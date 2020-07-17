@@ -36,11 +36,11 @@ const Contact: FC = (): ReactElement => {
 	};
 
 	return (
-		<Section id="contact" height="100vh">
+		<Section id="contact">
 			<SectionHeading text="Contact" />
-			<Box objectFit="contain" ml="auto" mr="auto" mb="5%" width="100%" textAlign="center" letterSpacing="3">
+			<Box width={{ base: '90%', md: '70%' }} textAlign="center">
 				<form onSubmit={(e) => sendEmail(e)}>
-					<FormControl ml="auto" mr="auto" mb="3%">
+					<FormControl mb="3%">
 						<Input
 							type="name"
 							id="name"
@@ -48,14 +48,12 @@ const Contact: FC = (): ReactElement => {
 							isRequired
 							aria-describedby="name-helper-text"
 							placeholder="Name"
-							width="70%"
-							ml="auto"
-							mr="auto"
+							width="100%"
 							backgroundColor={bgColor[colorMode]}
 							color={color[colorMode]}
 						/>
 					</FormControl>
-					<FormControl ml="auto" mr="auto" mb="3%">
+					<FormControl mb="3%">
 						<Input
 							type="email"
 							id="email"
@@ -63,27 +61,23 @@ const Contact: FC = (): ReactElement => {
 							isRequired
 							aria-describedby="email-helper-text"
 							placeholder="Email"
-							width="70%"
-							ml="auto"
-							mr="auto"
+							width="100%"
 							backgroundColor={bgColor[colorMode]}
 							color={color[colorMode]}
 						/>
 					</FormControl>
-					<FormControl ml="auto" mr="auto" mb="3%">
+					<FormControl mb="3%">
 						<Textarea
 							id="message"
 							name="message"
 							placeholder="Message"
 							isRequired
-							ml="auto"
-							mr="auto"
-							width="70%"
+							width="100%"
 							backgroundColor={bgColor[colorMode]}
 							color={color[colorMode]}
 						/>
 					</FormControl>
-					<Box ml="auto" mr="auto" width="304px" mb="3">
+					<Box width="304px" ml="auto" mr="auto" mb="3">
 						<ReCAPTCHA ref={recaptchaRef} sitekey="6LcS_7AZAAAAAI-RxystXhg2DbLsZ47Ze58vc8on" />
 					</Box>
 					<Button text="Send" type="submit" onClick={onOpen} isLoading={loading} />

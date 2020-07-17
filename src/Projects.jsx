@@ -51,7 +51,7 @@ const projectList = [
 const Projects = () => (
 	<Section id="projects" backgroundColor="lavender.100">
 		<SectionHeading text="Projects" />
-		<SimpleGrid columns={{ lg: 3, md: 2, sm: 1 }} gap={5}>
+		<SimpleGrid columns={{ lg: 3, md: 2, sm: 1 }} gap={10}>
 			{projectList.map(({ name, details, link, image }) => (
 				<Project key={name} name={name} details={details} link={link} image={image} />
 			))}

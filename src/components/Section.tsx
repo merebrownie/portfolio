@@ -18,13 +18,17 @@ const Section: FC<IProps> = (props: IProps): ReactElement => {
 	return (
 		<Box
 			as="section"
+			display="flex"
+			flexDir="column"
 			id={id}
 			backgroundColor={bgColor[colorMode]}
 			color={color[colorMode]}
 			height={height || undefined}
-			pt="5em"
-			pb="5em"
+			minHeight="100vh"
+			pr="3"
+			pl="3"
 			alignItems="center"
+			justifyContent="center"
 		>
 			{children}
 		</Box>
