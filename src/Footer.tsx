@@ -10,7 +10,7 @@ const Footer: FC = (): ReactElement => {
 	const color = { light: 'grey.300', dark: 'grey.100' };
 
 	return (
-		<Box pb="3" pt="3" backgroundColor={bgColor[colorMode]} color={color[colorMode]}>
+		<Box textAlign="center" pb="3" pt="3" backgroundColor={bgColor[colorMode]} color={color[colorMode]}>
 			<Text>&copy; 2016-{currentYear}</Text>
 		</Box>
 	);

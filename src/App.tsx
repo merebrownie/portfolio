@@ -25,7 +25,15 @@ const App: FC = (): ReactElement => {
 			<ColorModeContext.Provider value={{ colorMode }}>
 				<CSSReset />
 				<NavBar colorMode={colorMode} setColorMode={setColorMode} />
-				<Box pl="1%" pr="1%" top="0" bottom="0" width="100%" height="100%" backgroundImage={bgImage[colorMode]}>
+				<Box
+					pl="1.5%"
+					pr="1.5%"
+					top="0"
+					bottom="0"
+					width="100%"
+					height="100%"
+					backgroundImage={bgImage[colorMode]}
+				>
 					<Grid textAlign="center" backgroundColor={bgColor[colorMode]} color={color[colorMode]}>
 						<Intro />
 						<About />
