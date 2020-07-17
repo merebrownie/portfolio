@@ -1,6 +1,7 @@
-import React, { FC, ReactElement, Dispatch, SetStateAction } from 'react';
+import React, { FC, ReactElement, Dispatch, SetStateAction, useContext } from 'react';
 import { IconButton } from '@chakra-ui/core';
 import { FiMoon, FiSun } from 'react-icons/fi';
+import { ColorModeContext } from './colorModeContext';
 
 interface IProps {
 	colorMode: 'light' | 'dark';
@@ -8,8 +9,9 @@ interface IProps {
 }
 
 const ToggleColorMode: FC<IProps> = (props: IProps): ReactElement => {
-	const { colorMode, setColorMode } = props;
+	const { setColorMode } = props;
 
+	const { colorMode } = useContext(ColorModeContext);
 	const icon = colorMode === 'light' ? FiMoon : FiSun;
 	const bgColor = { light: 'grey.100', dark: 'grey.700' };
 	const color = { light: 'grey.700', dark: 'grey.100' };
