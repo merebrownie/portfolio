@@ -1,5 +1,6 @@
-import React, { ReactElement, FC } from 'react';
+import React, { ReactElement, FC, useContext } from 'react';
 import { Box, BoxProps } from '@chakra-ui/core';
+import { ColorModeContext } from '../colorModeContext';
 
 interface IProps {
 	id: string;
@@ -10,11 +11,16 @@ interface IProps {
 
 const Section: FC<IProps> = (props: IProps): ReactElement => {
 	const { id, children, backgroundColor, height } = props;
+
+	const { colorMode } = useContext(ColorModeContext);
+	const bgColor = { light: backgroundColor || 'lavender.100', dark: 'grey.900' };
+	const color = { light: 'black', dark: 'grey.200' };
 	return (
 		<Box
 			as="section"
 			id={id}
-			backgroundColor={backgroundColor || 'grey.100'}
+			backgroundColor={bgColor[colorMode]}
+			color={color[colorMode]}
 			height={height || undefined}
 			pt="5em"
 			pb="5em"

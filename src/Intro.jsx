@@ -5,7 +5,7 @@ import Subheader from './components/Subheader';
 import Section from './components/Section';
 
 const Intro = () => (
-	<Section id="home" backgroundColor="lavender" height="90vh">
+	<Section id="home" backgroundColor="lavender.100" height="90vh">
 		<Heading as="h1" size={{ lg: '2xl', md: 'xl', sm: 'lg' }} fontSize="6xl" mt="20%">
 			Meredith Browne Fronk
 		</Heading>

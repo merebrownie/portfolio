@@ -32,7 +32,7 @@ const Modal = (props: {
 						<Heading>Loading...</Heading>
 					</ModalHeader>
 					<ModalBody>
-						<Spinner thickness="4px" speed="0.65s" emptyColor="lavender" color="grey.150" size="xl" />
+						<Spinner thickness="4px" speed="0.65s" emptyColor="lavender.100" color="grey.300" size="xl" />
 						<Text>Please wait</Text>
 					</ModalBody>
 				</ModalContent>

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState, createRef } from 'react';
+import React, { FC, ReactElement, useState, createRef, useContext } from 'react';
 import { FormControl, Input, Textarea, Box, useDisclosure } from '@chakra-ui/core';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from 'emailjs-com';
@@ -6,13 +6,18 @@ import Modal from './Modal';
 import SectionHeading from './components/SectionHeading';
 import Button from './components/Button';
 import Section from './components/Section';
+import { ColorModeContext } from './colorModeContext';
 
 const Contact: FC = (): ReactElement => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const recaptchaRef = createRef<ReCAPTCHA>();
+
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(true);
 
-	const recaptchaRef = createRef<ReCAPTCHA>();
+	const { colorMode } = useContext(ColorModeContext);
+	const bgColor = { light: 'grey.100', dark: 'grey.700' };
+	const color = { light: 'grey.700', dark: 'white' };
 
 	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 		setError(false);
@@ -20,10 +25,10 @@ const Contact: FC = (): ReactElement => {
 		e.preventDefault();
 
 		return emailjs.sendForm('icloud', 'template_KRhM5nMN', e.target as any, 'user_KQXR5OSjppGBpBtgTf4Mb').then(
-			(result) => {
+			() => {
 				setLoading(false);
 			},
-			(error) => {
+			() => {
 				setError(true);
 				setLoading(false);
 			}
@@ -46,6 +51,8 @@ const Contact: FC = (): ReactElement => {
 							width="70%"
 							ml="auto"
 							mr="auto"
+							backgroundColor={bgColor[colorMode]}
+							color={color[colorMode]}
 						/>
 					</FormControl>
 					<FormControl ml="auto" mr="auto" mb="3%">
@@ -59,6 +66,8 @@ const Contact: FC = (): ReactElement => {
 							width="70%"
 							ml="auto"
 							mr="auto"
+							backgroundColor={bgColor[colorMode]}
+							color={color[colorMode]}
 						/>
 					</FormControl>
 					<FormControl ml="auto" mr="auto" mb="3%">
@@ -70,6 +79,8 @@ const Contact: FC = (): ReactElement => {
 							ml="auto"
 							mr="auto"
 							width="70%"
+							backgroundColor={bgColor[colorMode]}
+							color={color[colorMode]}
 						/>
 					</FormControl>
 					<Box ml="auto" mr="auto" width="304px" mb="3">

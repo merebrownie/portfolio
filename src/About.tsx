@@ -1,11 +1,12 @@
 import React, { FC, ReactElement } from 'react';
 import md5 from 'md5';
-import { Heading, Image, Text, Link, Box, IconButton } from '@chakra-ui/core';
+import { Heading, Image, Text, Link, Box } from '@chakra-ui/core';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
 
 import Subheader from './components/Subheader';
 import SectionHeading from './components/SectionHeading';
 import Section from './components/Section';
+import IconButton from './components/IconButton';
 
 const About: FC = (): ReactElement => {
 	const emailHash = md5('merebrownie@me.com');
@@ -21,26 +22,11 @@ const About: FC = (): ReactElement => {
 				mr="auto"
 			/>
 			<Box mt="3" mb="3">
-				<Link href="https://www.linkedin.com/in/meredithbfronk" isExternal color="grey.150">
-					<IconButton
-						variant="outline"
-						variantColor="grey.150"
-						aria-label="LinkedIn"
-						size="lg"
-						icon={FiLinkedin}
-						_hover={{ backgroundColor: 'grey.150', color: 'grey.50' }}
-					/>
+				<Link href="https://www.linkedin.com/in/meredithbfronk" isExternal color="grey.300">
+					<IconButton label="LinkedIn" icon={FiLinkedin} />
 				</Link>
-				<Link href="https://github.com/merebrownie" isExternal color="grey.150">
-					<IconButton
-						variant="outline"
-						variantColor="grey.150"
-						aria-label="GitHub"
-						size="lg"
-						icon={FiGithub}
-						ml="1"
-						_hover={{ backgroundColor: 'grey.150', color: 'grey.50' }}
-					/>
+				<Link href="https://github.com/merebrownie" isExternal color="grey.300" ml="1">
+					<IconButton label="GitHub" icon={FiGithub} />
 				</Link>
 			</Box>
 			<Heading as="h3" size="lg" fontSize="4xl" mt="5" mb="3">
