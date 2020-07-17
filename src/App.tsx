@@ -1,5 +1,4 @@
 import React, { FC, ReactElement, useState } from 'react';
-import './App.css';
 import NavBar from './NavBar';
 import Intro from './Intro';
 import About from './About';
