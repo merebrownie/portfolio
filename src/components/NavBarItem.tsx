@@ -13,7 +13,7 @@ const NavBarItem: FC<IProps> = (props: IProps): ReactElement => {
 
 	return (
 		<Link href={href} color={color} ml="5" onClick={onClick}>
-			<Heading as="h2" fontSize="3xl" letterSpacing="2" fontFamily="mono" mt="0" mb="0">
+			<Heading as="h2" fontSize="3xl" fontWeight="normal" fontFamily="mono" mt="0" mb="0">
 				{text}
 			</Heading>
 		</Link>

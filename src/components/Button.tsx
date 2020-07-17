@@ -15,6 +15,7 @@ const Button: FC<IProps> = (props: IProps): ReactElement => {
 	const { colorMode } = useContext(ColorModeContext);
 	const bgColor = { light: 'grey.100', dark: 'grey.700' };
 	const color = { light: 'grey.700', dark: 'grey.100' };
+	const opposite = colorMode === 'light' ? 'dark' : 'light';
 
 	return href ? (
 		<Link href={href} color="black" textDecor="none">
@@ -25,6 +26,7 @@ const Button: FC<IProps> = (props: IProps): ReactElement => {
 				backgroundColor={bgColor[colorMode]}
 				color={color[colorMode]}
 				onClick={onClick || undefined}
+				_hover={{ backgroundColor: bgColor[opposite], color: color[opposite] }}
 				isLoading={isLoading || false}
 			>
 				{text}
@@ -38,6 +40,7 @@ const Button: FC<IProps> = (props: IProps): ReactElement => {
 			backgroundColor={bgColor[colorMode]}
 			color={color[colorMode]}
 			onClick={onClick || undefined}
+			_hover={{ backgroundColor: bgColor[opposite], color: color[opposite] }}
 			isLoading={isLoading || false}
 		>
 			{text}
