@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
+import TagManager from 'react-gtm-module';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+TagManager.initialize({ gtmId: 'GTM-59CCXVJ' });
 ReactGA.initialize('UA-89191904-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
