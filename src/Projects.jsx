@@ -6,6 +6,12 @@ import Section from './components/Section';
 
 const projectList = [
 	{
+		name: 'Can I Haz?',
+		details: ['Weekend project', 'GatsbyJS', 'ChakraUI', 'Algolia search'],
+		link: 'https://canihaz.merebrownie.dev',
+		image: process.env.PUBLIC_URL + '/canihaz.jpeg',
+	},
+	{
 		name: 'Master of My Music',
 		details: ['Created for ITIS3105', 'PHP Web Application', 'MySQL Database', 'Admin Functionality'],
 		link: 'https://momm.meredith-browne.com',

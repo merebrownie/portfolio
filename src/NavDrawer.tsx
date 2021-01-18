@@ -17,7 +17,7 @@ const NavDrawer: FC<IProps> = (props: IProps): ReactElement => {
 	const color = { light: 'grey.300', dark: 'grey.200' };
 
 	return (
-		<Drawer onClose={onClose} isOpen={isOpen} placement="left" size="xs">
+		<Drawer onClose={onClose} isOpen={isOpen} placement="left">
 			<DrawerOverlay />
 			<DrawerContent backgroundColor={bgColor[colorMode]} color={color[colorMode]}>
 				<CloseButton onClick={onClose} alignContent="right" />

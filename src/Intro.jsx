@@ -16,6 +16,7 @@ const Intro = () => (
 			fontSize="5xl"
 			fontWeight="normal"
 			fontFamily="mono"
+			letterSpacing=".05em"
 		/>
 		<Button href="#about" text="Learn More" />
 	</Section>

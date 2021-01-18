@@ -28,6 +28,8 @@ const Button: FC<IProps> = (props: IProps): ReactElement => {
 				onClick={onClick || undefined}
 				_hover={{ backgroundColor: bgColor[opposite], color: color[opposite] }}
 				isLoading={isLoading || false}
+				borderRadius={20}
+				mt={'2em'}
 			>
 				{text}
 			</ChakraButton>
@@ -42,6 +44,8 @@ const Button: FC<IProps> = (props: IProps): ReactElement => {
 			onClick={onClick || undefined}
 			_hover={{ backgroundColor: bgColor[opposite], color: color[opposite] }}
 			isLoading={isLoading || false}
+			borderRadius={5}
+			mt={'2em'}
 		>
 			{text}
 		</ChakraButton>

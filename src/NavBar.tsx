@@ -22,6 +22,7 @@ const NavBar: FC<IProps> = (props: IProps): ReactElement => {
 			as="nav"
 			align="center"
 			justify="space-between"
+			alignItems="center"
 			wrap="wrap"
 			padding="1.5rem"
 			bg={bgColor[colorMode]}
@@ -32,12 +33,12 @@ const NavBar: FC<IProps> = (props: IProps): ReactElement => {
 			top="0"
 			zIndex={1}
 		>
-			<Flex align="center" mr={5}>
-				<Heading as="h1" size="xl" mt="0" mb="0" letterSpacing={'-.1rem'}>
-					mb
-				</Heading>
-			</Flex>
-			<Box alignContent="right" display={{ base: 'flex', md: 'none' }} alignSelf="right">
+			{/* <Flex align="center" mr={5}> */}
+			<Heading as="h1" size="2xl" mt="0" mb="0" letterSpacing={'-.1rem'}>
+				mb
+			</Heading>
+			{/* </Flex> */}
+			<Box alignContent="right" display={{ base: 'flex', md: 'none' }}>
 				<ToggleColorMode colorMode={colorMode} setColorMode={setColorMode} />
 				<Box display={{ base: 'flex', md: 'none' }} onClick={onOpen}>
 					<IconButton label="Menu" icon={FiMenu} />
@@ -49,7 +50,7 @@ const NavBar: FC<IProps> = (props: IProps): ReactElement => {
 				display={{ xs: 'none', sm: 'none', md: 'flex' }}
 				width={{ xs: 'full', sm: 'full', md: 'auto' }}
 				alignItems="center"
-				flexGrow={1}
+				// flexGrow={2}
 				ml="5"
 			>
 				<NavBarItem href="#home" text="Home" color={color[colorMode]} />
